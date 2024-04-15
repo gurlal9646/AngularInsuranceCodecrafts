@@ -61,13 +61,13 @@
               class="font-medium text-red-600 dark:text-red-500 hover:underline ms-3"
               >Remove</a
             >
-            } @if (claim.Status == 'Pending' || claim.Status == 'Rejected') {
+            }@if ( roleId === '1'  && (claim.Status == 'Pending' || claim.Status == 'Rejected')) {
             <a
               (click)="changeClaimStatus(claim.ClaimId,'Approved')"
               class="font-medium text-green-600 dark:text-red-500 hover:underline ms-3"
               >Approve</a
             >
-            } @else if (claim.Status == 'Approved' ) {
+            } @else if (roleId === '1' && claim.Status == 'Approved' ) {
               <a
               (click)="changeClaimStatus(claim.ClaimId,'Rejected')"
               class="font-medium text-red-600 dark:text-red-500 hover:underline ms-3"
