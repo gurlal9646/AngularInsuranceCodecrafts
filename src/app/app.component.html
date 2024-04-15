@@ -1,0 +1,13 @@
+<div class="flex h-screen">
+  <!-- Side Navigation -->
+  @if(isLoggedIn){
+  <div class="flex-none bg-blue-900 text-white">
+    <app-sidenavigation></app-sidenavigation>
+  </div>
+  }
+
+  <!-- Main Content Area -->
+  <div class="flex-grow bg-gray-200">
+    <router-outlet></router-outlet>
+  </div>
+</div>

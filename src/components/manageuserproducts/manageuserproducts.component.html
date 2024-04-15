@@ -1,0 +1,29 @@
+<div class="max-w-full mx-auto bg-white rounded-md p-8 shadow-md" style="margin: 15px;">
+    <h2 class="text-2xl font-semibold mb-6">{{title}} Product</h2>
+    <form [formGroup]="productForm" >
+        <!-- Product Dropdown -->
+        <div class="mb-4">
+            <label for="product" class="block text-gray-700 text-sm font-bold mb-2">Product</label>
+            <select id="product" name="product" formControlName="ProductId" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500">
+                @for (product of productList; track $index) {
+                    <option [value]="product.ProductName">{{product.ProductName}}</option>
+                }              
+            </select>
+        </div>
+
+        <!-- Serial Number Input -->
+        <div class="mb-4">
+            <label for="serialNumber" class="block text-gray-700 text-sm font-bold mb-2">Serial Number</label>
+            <input type="text" id="serialNumber" name="serialNumber" formControlName="SerialNo" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500" placeholder="Enter serial number">
+        </div>
+
+        <!-- Purchase Date Input -->
+        <div class="mb-6">
+            <label for="purchaseDate" class="block text-gray-700 text-sm font-bold mb-2">Purchase Date</label>
+            <input type="date" id="purchaseDate" name="purchaseDate" formControlName="PurchaseDate"  class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500">
+        </div>
+
+        <!-- Submit Button -->
+        <button type="button" [disabled]="productForm.invalid" (click)="addProduct()" class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">Submit</button>
+    </form>
+</div>

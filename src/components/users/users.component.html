@@ -1,0 +1,67 @@
+<div class="container">
+    <div class="overflow-y-auto max-h-[600px]">
+      <!-- Adjust max height as needed -->
+      <table
+        class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
+      >
+        <thead
+          class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 sticky top-0 z-10"
+        >
+          <tr>
+            <th scope="col" class="px-6 py-3">Name</th>
+            <th scope="col" class="px-6 py-3">Username</th>
+            
+
+            <th scope="col" class="px-6 py-3">Email</th>
+            <th scope="col" class="px-6 py-3">Phone Number</th>
+
+            <th scope="col" class="px-6 py-3">Address</th>
+
+            <th scope="col" class="px-6 py-3">Created Date</th>
+            <th scope="col" class="px-6 py-3">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (user of usersList; track $index) {
+          <tr
+            class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
+          >
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              {{ user.Name }}
+            </th>
+            <td class="px-6 py-4">
+                {{ user.Username }}
+              </td>
+            <td class="px-6 py-4">
+              {{ user.Email }}
+            </td>
+            <td class="px-6 py-4">
+                {{ user.CellphoneNo }}
+              </td>
+              <td class="px-6 py-4">
+                {{ user.Address }}
+              </td>
+            <td class="px-6 py-4">
+              {{ user.createdAt }}
+            </td>
+            <td class="flex items-center px-6 py-4">
+              <a
+                (click)="deleteUser(user.UserID)"
+                class="font-medium text-red-600 dark:text-red-500 hover:underline ms-3"
+                >Remove</a
+              >
+            </td>
+          </tr>
+          } @empty {
+          <tr class="text-center">
+            <td colspan="5" class="py-4">No admins available</td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

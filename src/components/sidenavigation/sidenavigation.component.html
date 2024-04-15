@@ -1,0 +1,93 @@
+<!-- Include Font Awesome CSS -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  rel="stylesheet"
+/>
+
+<div class="bg-blue-900 w-64 text-white">
+  <div class="flex flex-col h-full">
+    <div class="flex items-center justify-center h-16 bg-blue-800">
+      <span class="text-2xl font-bold">InsurePro</span>
+    </div>
+    <div class="flex-grow">
+      <ul class="py-4">
+        @if (roleId === '1') {
+          <li>
+            <a
+              routerLink="/products"
+              routerLinkActive="active"
+              class="flex items-center px-6 py-2 text-gray-300 hover:bg-blue-800 hover:text-white"
+            >
+            <i class="fas fa-shopping-bag mr-2"></i>
+            <span>Products</span>
+            </a>
+          </li>
+        }
+       
+        <li>
+          <a
+            routerLink="/claims"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="flex items-center px-6 py-2 text-gray-300 hover:bg-blue-800 hover:text-white"
+          >
+            <i class="fas fa-file-alt mr-2"></i>
+            <span>Claims</span>
+          </a>
+        </li>
+        <li>
+          <a
+            routerLink="/userproducts"
+            routerLinkActive="active"
+            class="flex items-center px-6 py-2 text-gray-300 hover:bg-blue-800 hover:text-white"
+          >
+            <i class="fas fa-shopping-cart mr-2"></i>
+            <span>User Products</span>
+          </a>
+        </li>
+        @if (roleId === '1') {
+          <li>
+            <a
+              routerLink="/users"
+              routerLinkActive="active"
+              class="flex items-center px-6 py-2 text-gray-300 hover:bg-blue-800 hover:text-white"
+            >
+              <i class="fas fa-users mr-2"></i>
+              <span>Users</span>
+            </a>
+          </li>
+        }
+        @if (roleId === '1') {
+        <li>
+          <a
+            routerLink="/admins"
+            routerLinkActive="active"
+            class="flex items-center px-6 py-2 text-gray-300 hover:bg-blue-800 hover:text-white"
+          >
+            <i class="fas fa-user-shield mr-2"></i>
+            <span>Admins</span>
+          </a>
+        </li>
+      }
+        <li>
+          <a
+            routerLink="/myprofile"
+            routerLinkActive="active"
+            class="flex items-center px-6 py-2 text-gray-300 hover:bg-blue-800 hover:text-white"
+          >
+            <i class="fas fa-user mr-2"></i>
+            <span>My Profile</span>
+          </a>
+        </li>
+        <li>
+          <a
+            (click)="handleLogout()"
+            class="flex items-center px-6 py-2 text-gray-300 hover:bg-blue-800 hover:text-white" >
+            <i class="fas fa-sign-out-alt mr-2"></i>
+            <span>Logout</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

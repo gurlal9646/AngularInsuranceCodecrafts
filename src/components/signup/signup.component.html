@@ -1,0 +1,73 @@
+<main class="flex h-screen items-center justify-center bg-gray-50">
+    <div id="card" class="w-full max-w-md space-y-4 rounded-lg bg-white p-8 shadow-md">
+      <div id="card-title" class="text-center">
+        <h2 class="text-2xl font-bold">SIGN UP</h2>
+        <div class="mx-auto mt-2 h-1 w-24 bg-blue-500"></div>
+      </div>
+      <form [formGroup]="signupForm" (ngSubmit)="submitForm()">
+        <label for="user-username" class="block">Username</label>
+        <input
+          id="user-username"
+          type="text"
+          formControlName="Username"
+          class="w-full border-b-2 border-blue-500 py-1"
+          required
+        />
+        <label for="user-cellphone" class="block">Cellphone</label>
+        <input
+          id="user-cellphone"
+          type="text"
+          formControlName="CellphoneNo"
+          class="w-full border-b-2 border-blue-500 py-1"
+          required
+        />
+        <label for="user-password" class="block">Password</label>
+        <input
+          id="user-password"
+          type="password"
+          formControlName="Password"
+          class="w-full border-b-2 border-blue-500 py-1"
+          required
+        />
+        <label for="user-email" class="block">Email</label>
+        <input
+          id="user-email"
+          type="email"
+          formControlName="Email"
+          class="w-full border-b-2 border-blue-500 py-1"
+          required
+        />
+        <label for="user-name" class="block">Name</label>
+        <input
+          id="user-name"
+          type="text"
+          formControlName="Name"
+          class="w-full border-b-2 border-blue-500 py-1"
+          required
+        />
+        <label for="user-address" class="block">Address</label>
+        <input
+          id="user-address"
+          type="text"
+          formControlName="Address"
+          class="w-full border-b-2 border-blue-500 py-1"
+          required
+        />
+        <br />
+        <div class="text-center">
+          <button
+            type="submit"
+            class="rounded-md bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
+            [disabled]="signupForm.invalid"
+          >
+            SIGN UP
+          </button>
+        </div>
+        <br />
+        <p class="text-center text-gray-600">
+          Already have an account?
+          <a href="/login" class="text-blue-500">Log in</a>
+        </p>
+      </form>
+    </div>
+</main>
